@@ -68,7 +68,7 @@ namespace LOL_Little_Book
                                     string re = line.Substring(line.Length - 9, 9);
                                     int count=int.Parse(System.Text.RegularExpressions.Regex.Replace(re, @"[^0-9]+", ""));
                                     line=line.Replace(re, re.Replace(count.ToString(), (count + 1).ToString()));
-                                    
+                                     
                                     break;
                                 }
                             }
