@@ -116,11 +116,16 @@ namespace LOL_Little_Book
 
         private void name_SelectedIndexChanged(object sender, EventArgs e)
         {
-            hero.Text = player[name.SelectedIndex]["championName"].ToString();
-            if (name.SelectedIndex <= 4)
-                team.Text = "猪队友";
-            else
+            if (name.Items.Count == 8)
                 team.Text = "狗对手";
+            else
+            {
+                hero.Text = player[name.SelectedIndex]["championName"].ToString();
+                if (name.SelectedIndex <= (name.Items.Count / 2 - 1))
+                    team.Text = "猪队友";
+                else
+                    team.Text = "狗对手";
+            }
         }
 
         private void add_Click(object sender, EventArgs e)
