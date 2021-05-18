@@ -16,9 +16,10 @@ namespace LOL_Little_Book
 {
     public partial class Form1 : Form
     {
-        string gamestats = "https://127.0.0.1:2999/liveclientdata/gamestats";
+        string gamestats = "https://127.0.0.1:2999/liveclientdata/activeplayername";
         string playerlist = "https://127.0.0.1:2999/liveclientdata/playerlist";
         JArray player;
+        string myteam;
         int flag = 0;
         public Form1()
         {
@@ -52,8 +53,12 @@ namespace LOL_Little_Book
                 else if (flag==1)
                 {
                     player = (JArray)JsonConvert.DeserializeObject(httpsreq(playerlist));
+                    myteam = httpsreq(gamestats);
+                    myteam = myteam.Substring(1, myteam.Length - 2);
                     for (int i=0;i< player.Count; i++)
                     {
+                        if (player[i]["summonerName"].ToString() == myteam)
+                            myteam = player[i]["team"].ToString();
                         string _name = player[i]["summonerName"].ToString();
                         string text = File.ReadAllText("Data\\AllUser.txt");
                         if(text.Contains(_name + " 作为"))
@@ -123,7 +128,7 @@ namespace LOL_Little_Book
             }
             else
             {
-                if (name.SelectedIndex <= (name.Items.Count / 2 - 1))
+                if (myteam == player[name.SelectedIndex]["team"].ToString())
                     team.Text = "猪队友";
                 else
                     team.Text = "狗对手";
