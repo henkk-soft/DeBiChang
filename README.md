@@ -6,3 +6,8 @@
 `Data/action.txt`可添加行为
 
 利用英雄联盟客户端自带API获取对局人物，支持所有地区服务器以及所有模式，理论上无封号风险。对局时出现小本本已经添加人物会给予提醒，干就完了。
+
+
+参考链接：
+
+https://developer.riotgames.com/docs/lol
