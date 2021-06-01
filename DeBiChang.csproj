@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{42438A83-325D-45DC-ABB2-8042C9CE8DB6}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>LOL_Little_Book</RootNamespace>
-    <AssemblyName>LOL_Little_Book</AssemblyName>
+    <RootNamespace>DeBiChang</RootNamespace>
+    <AssemblyName>DeBiChang</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -65,6 +65,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
